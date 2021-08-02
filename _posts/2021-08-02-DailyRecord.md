@@ -42,6 +42,13 @@ Gudio Van Rossum - 1989년 크리스마스에 할일이 없어 파이썬 개발
     * %string
     * format
     * fstring
+    * Padding, Aligning
+```
+something = "water"
+print("%(a)10s"%{"a":something})
+print("{a:*>10s}".format(a=something))
+print(f'{something:-^20}')
+```
 
 ### 6. 피어세션 정리
 * Ice breaking
