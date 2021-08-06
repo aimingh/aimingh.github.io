@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "[boostcamp AI Tech] 학습기록 day04"
-date: 2021-08-06 11:13:28 -0400
+date: 2021-08-05 11:13:28 -0400
 categories:
 use_math: true
 ---
@@ -149,8 +149,167 @@ $$
 
 # 과제
 ## 선택과제 1
+### 1) Gradient Descent (1)
+* 경사하강법을 구현하기 위한 과제였다. 처음에는 sympy를 이용하여 gradient를 계산하였다. 기본적인 수도코드를 참고하여 gradient를 업데이트 해주었다. 아래는 추가한 코드 부분이다.
+```
+def func_gradient(fun, val):
+    ## TODO
+    _, fun = func(val)
+    diff = sym.diff(fun, x)
+    return diff.subs(x, val), diff
 
+def gradient_descent(fun, init_point, lr_rate=1e-2, epsilon=1e-5):
+    cnt = 0
+    val = init_point
+    ## Todo
+    grad, _ = func_gradient(fun, val)   # gradient
+
+    while np.abs(grad) > epsilon:   # 종료조건
+        val = val - lr_rate * grad  # 업데이트
+        grad, _ = func_gradient(fun, val)
+        cnt = cnt + 1
+    
+    print("함수: {}\n연산횟수: {}\n최소점: ({}, {})".format(fun(val)[1], cnt, val, fun(val)[0]))
+
+gradient_descent(fun = func, init_point = 3)
+# 함수: Poly(x**2 + 2*x + 3, x, domain='ZZ')
+# 연산횟수: 673
+# 최소점: (-0.999995020234038, 2.00000000002480)
+```
+* 위와 같이 673번만에 종료조건을 만족아혀 목적하였건 최소점 (-1,2)에 근사한 값을 얻을 수 있었다.
+
+### 2) Gradient Descent (2)
+* 위의 sympy와 달리 직점 아주 작은 수 h를 이용하여 미분값을 근사하여 구현하는 문제였다. 구현한 미분 함수는 다음과 같다.
+```
+def difference_quotient(f, x, h=1e-9):
+    ## Todo
+    f_x = f(x)
+    f_x_h = f(x+h)
+    return (f_x_h - f_x)/h
+```
+* 최종적으로는 아래와 같이 비슷한 672번의 횟수로 목적했던 결과의 근사치를 얻을 수 있었다.
+```
+gradient_descent(func, init_point=3)
+연산횟수: 672
+최소점: (-0.999994846459742, 2.00000000002656)
+```
+* 
+
+### 3) Linear Regression
+#### 3-1. Basic function
+* 조금 난이도가 올라간 느낌이었는데 강의자료를 참고하여 각 성분에 대해 미분하여 결과를 구현하였다.
+```
+train_x = (np.random.rand(1000) - 0.5) * 10
+train_y = np.zeros_like(train_x)
+
+def func(val):
+    fun = sym.poly(7*x + 2)
+    return fun.subs(x, val)
+
+for i in range(1000):
+    train_y[i] = func(train_x[i])
+
+# initialize
+w, b = 0.0, 0.0
+
+lr_rate = 1e-2
+n_data = len(train_x)
+errors = []
+
+for i in range(100):
+    ## Todo
+    # 예측값 y
+    _y = w * train_x + b
+
+    # gradient
+    gradient_w = -np.mean(train_x * (train_y - _y))
+    gradient_b = -np.mean(train_y - _y)
+
+    # w, b update with gradient and learning rate
+    w = w - lr_rate * gradient_w
+    b = b - lr_rate * gradient_b
+
+    # L2 norm과 np_sum 함수 활용해서 error 정의
+    error = np.sum(np.square(train_y-_y))
+    # Error graph 출력하기 위한 부분
+    errors.append(error)
+
+print("w : {} / b : {} / error : {}".format(w, b, error))
+```
+* 처음에 주어진대로 100번을 돌렸을 떄에는 w는 어느정도 근사치를 보였지만 b는 근사치를 보여주지 못하였다. 에러를 확인하니 역시 큰값이었다.
+```
+w : 6.999290693363847 / b : 1.2685573119751654 / error : 545.8787852859643
+```
+* 그래서 다음에는 학습 횟수를 500번까지 늘려서 결과를 보았고 목적했던 결과와 비슷한 출력을 얻을 수 있었다.
+```
+w : 7.000071093132297 / b : 1.9870990999304934 / error : 0.1697809837093649
+```
+* 에러를 플롯해보니 다음과 같이 이쁘게 떨어지는 것을 볼 수 있었다.
+![에러 그래프1](./../_img/week1/error_full.JPG)
+
+#### 3.2. More complicated function
+* 그리고 좀더 확장해서 여러개의 계수를 구하는 문제를 수행하였다.
+```
+train_x = np.array([[1,1,1], [1,1,2], [1,2,2], [2,2,3], [2,3,3], [1,2,3]])
+train_y = np.dot(train_x, np.array([1,3,5])) + 7
+
+# random initialize
+beta_gd = [9.4, 10.6, -3.7, -1.2]
+# for constant element
+expand_x = np.array([np.append(x, [1]) for x in train_x])
+
+for t in range(5000):
+    ## Todo
+    _y = expand_x @ beta_gd 
+    grad = -np.transpose(expand_x) @ (train_y - _y)
+    beta_gd = beta_gd - lr_rate * grad
+
+print("After gradient descent, beta_gd : {}".format(beta_gd))
+```
+* 목적했던 근사치에 도달하는 것을 볼 수 있었다.
+```
+After gradient descent, beta_gd : [1.         3.         5.         6.99999999]
+```
+
+### 4. Stochastic Gradient Descent
+* 마지막 문제는 3-1을 변경하여 mini-batch에 대하여 학습하도록 하는 것이었다.
+```
+for e in range(1):
+    index_batch = range(1000)
+    for i in range(100):
+        ## Todo
+        index_mini_batch = np.random.choice(index_batch, size=10, replace=False, )
+        # 예측값 y
+        _y = w * train_x[index_mini_batch] + b
+
+        # gradient
+        gradient_w = -np.mean(train_x[index_mini_batch] * (train_y[index_mini_batch] - _y))
+        gradient_b = -np.mean(train_y[index_mini_batch] - _y)
+
+        # w, b update with gradient and learning rate
+        w = w - lr_rate * gradient_w
+        b = b - lr_rate * gradient_b
+
+        # L2 norm과 np_sum 함수 활용해서 error 정의
+        error = np.sum(np.square(train_y[index_mini_batch]-_y))
+        # Error graph 출력하기 위한 부분
+        errors.append(error)
+
+print("w : {} / b : {} / error : {}".format(w, b, error))
+```
+* 랜덤하게 인덱스를 뽑아서 미니뱃치를 만들었고 비복원 옵션을 주어서 한 epoch동안 데이터들이 한번씩 학습되도록 하였다. for문을 2개로 만들어 epoch를 기준으로 학습 할 수 있도록 구현하였다.
+* 1 epoch로 같은 횟수를 학습하였을 때 full-batch보다 작은 에러를 보였다.
+```
+w : 7.005582389482701 / b : 1.362923194063601 / error : 4.1357411581200605
+```
+* 5 epoch를 돌리자 목적했던 근사치를 볼 수 있었다.
+```
+w : 7.000387467552241 / b : 1.9883237237543712 / error : 0.0013147378135291122
+```
+* 에러 그래프를 보면 full-batch와 달리 에러 값이 증가하는 경우도 있었지만 1회에 1/10의 데이터만 사용하고도 효율적으로 학습한 결과를 볼 수 있었다.
+![에러 그래프2](./../_img/week1/error_mini.JPG)
 
 # [피어세션](https://hackmd.io/@ai17/BkCPyMK1Y)
 
 # 후기
+확률, 통계에 대한 기본을 복습하고 선택과제를 통하여 경사하강법에 대하여 다시 공부하였다. 이미 잘 구현되어 함수로만 사용했었던 경사하강법을 직접 구현하니 좀더 정확히 이해를 할 수 있었다.

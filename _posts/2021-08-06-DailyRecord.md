@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "[boostcamp AI Tech] 학습기록 day04"
-date: 2021-08-06 11:13:28 -0400
+title: "[boostcamp AI Tech] 학습기록 day05"
+date: 2021-08-06 10:24:05 -0400
 categories:
 use_math: true
 ---
@@ -92,8 +92,38 @@ use_math: true
 
 # 과제
 ## 선택과제 2
+* RNN의 역전파 알고리즘을 이해할 수 있는 문제였다. RNN의 경우 이전 출력이 다음 출력에 영향을 주기 떄문에 gradient를 $W_{rec}$에 대해서도 고려해야 했다.
+* 수식을 유도하여 최종적으로 다음과 같이 구현하였다.
+```
+def backward_gradient(X, S, grad_out, wRec):
+    """
+    X: input
+    S: 모든 input 시퀀스에 대한 상태를 담고 있는 행렬
+    grad_out: output의 gradient
+    wRec: 재귀적으로 사용되는 학습 파라미터
+    """
+    # grad_over_time: loss의 state 에 대한 gradient 
+    # 초기화
+    grad_over_time = np.zeros((X.shape[0], X.shape[1]+1))
+    grad_over_time[:, -1] = grad_out
+    # gradient accumulations 초기화
+    wx_grad = 0
+    wRec_grad = 0
+    '''
+    TODO
+    '''
+    for k in range(-1, -X.shape[1]-1, -1):
+        wx_grad = wx_grad + np.sum(grad_over_time[:,k] @ X[:,k])/X.shape[0]
+        wRec_grad = wRec_grad + np.sum(grad_over_time[:,k] @ S[:,k-1])/S.shape[0]
+        grad_over_time[:,k-1] = grad_over_time[:,k] * wRec
 
+    return (wx_grad, wRec_grad), grad_over_time
+```
+* 최종 테스트 코드에서 아무 에러도 나지 않고 잘 동작함을 확인하였다.
 
 # [피어세션](https://hackmd.io/@ai17/HyHlrP5kK)
 
 # 후기
+선택과제2를 하면서 삽질을 오래하여 좀 머리가 아픈 하루였다. 아래  TODO 1에 있는 수식으로만 하다가 먼다 잘못 했음을 느겼을때는 너무 시가닝 오래 지난 후였다.
+
+어느세 부캠을 시작한지 1주일이 지났는데 새로운 열정을 받은 느낌이었다. 혼자 집에서 할 떄는 날이 갈수록 지치고 서서히 게으름에 짓눌려 노력도 열정도 풍화되는 느낌이었는데 단기적인 목적과 장기적인 목적을 가지고 부캠을 시작하고 다른 사람들과 같은 목적을 향해 공부하는 것은 다른 느낌이 들었다. 
