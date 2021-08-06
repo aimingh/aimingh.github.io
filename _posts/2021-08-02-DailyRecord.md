@@ -2,6 +2,7 @@
 title: "[boostcamp AI Tech] 학습기록 day01"
 date: 2021-08-03 11:38:18 -0400
 categories:
+use_math: true
 ---
 
 ### 1. Python

@@ -2,6 +2,7 @@
 title: "[boostcamp AI Tech] 학습기록 day03"
 date: 2021-08-04 10:58:18 -0400
 categories:
+use_math: true
 ---
 
 # AI Math
