@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "[boostcamp AI Tech] 학습기록 day02"
 date: 2021-08-04 11:20:18 -0400
 categories:
