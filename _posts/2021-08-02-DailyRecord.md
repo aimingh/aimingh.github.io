@@ -1,7 +1,7 @@
 ---
-title: "학습기록 day01"
+title: "[boostcamp AI Tech] 학습기록 day01"
 date: 2021-08-03 11:38:18 -0400
-categories: Boostcamp_AI_tech
+categories:
 ---
 
 ### 1. Python
@@ -48,6 +48,9 @@ Gudio Van Rossum - 1989년 크리스마스에 할일이 없어 파이썬 개발
     print(f'{something:-^20}')
     ```
 
-### 6. 피어세션 정리
-* Ice breaking
+### 6. MeetUp & 피어세션 정리
+* 조를 배정받고 처음으로 팀원들과 인사하며 Ice breaking
 * [그라운드룰](https://github.com/Kangsukmin/K-AI/wiki)
+
+### 후기
+시작하는 첫날이었기 때문에 조원들과 어색하기도 했지만 진행하면서 멘토분들도 소개받을 수 있었고 앞으로의 여정이 설레는 하루였습니다. 첫날이라 정리를 많이 하지는 못했는데 내일부터 내용도 글로 정리해보려 합니다.
