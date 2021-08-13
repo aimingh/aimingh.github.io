@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "[boostcamp AI Tech] 학습기록 day02"
-date: 2021-08-03 11:20:18 -0400
+date: 2021-08-03 23:20:18 -0400
 categories:
 use_math: true
 ---
