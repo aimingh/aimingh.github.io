@@ -288,4 +288,4 @@ defaults:
       share: true
       related: true
 
-theme: mmistakes/minimal-mistakes
+remote_theme : mmistakes/minimal-mistakes
