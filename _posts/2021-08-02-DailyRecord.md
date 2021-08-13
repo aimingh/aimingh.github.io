@@ -1,9 +1,7 @@
 ---
-layout: post
 title: "[boostcamp AI Tech] 학습기록 day01"
 date: 2021-08-02 23:38:18 -0400
 categories:
-use_math: true
 ---
 
 ### 1. Python
