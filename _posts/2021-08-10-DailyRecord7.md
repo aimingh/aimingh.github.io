@@ -2,6 +2,7 @@
 title: "[boostcamp AI Tech] 학습기록 day07 (week2)"
 date: 2021-08-10 21:23:25 -0400
 categories:
+use_math: true
 ---
 
 # Deep Learning Basic

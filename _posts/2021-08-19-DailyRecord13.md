@@ -2,6 +2,7 @@
 title: "[boostcamp AI Tech] 학습기록 day13 (week3)"
 date: 2021-08-19 22:50:05 -0400
 categories:
+use_math: true
 ---
 
 # Pytorch
