@@ -1,5 +1,5 @@
 ---
-title: "[boostcamp AI Tech] 학습기록 day13 (week3)"
+title: "[boostcamp AI Tech] 학습기록 day14 (week3)"
 date: 2021-08-20 23:23:27 -0400
 categories:
 use_math: true
