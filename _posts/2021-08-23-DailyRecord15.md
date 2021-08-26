@@ -1,6 +1,6 @@
 ---
 title: "[boostcamp AI Tech] 학습기록 day15 (week4)"
-date: 2021-08-20 23:23:27 -0400
+date: 2021-08-23 20:42:52 -0400
 categories:
 use_math: true
 ---
@@ -38,6 +38,6 @@ use_math: true
     * class = ClassificationModel(Image)
     * 위의 형태처럼 이미지를 입력으로 class를 출력으로 가지는 model을 의미합니다.
 
-# [피어세션 - 팀회고록]()
+# [피어세션 - 팀회고록](https://hackmd.io/@ai17/r15fJRlWt)
 
 # 후기
