@@ -1,5 +1,5 @@
 ---
-title: "[boostcamp AI Tech] 학습기록 day17 (week4)"
+title: "[boostcamp AI Tech] 학습기록 day18 (week4)"
 date: 2021-08-26 20:24:37 -0400
 categories:
 use_math: true
@@ -75,6 +75,6 @@ with torch.no_grad():
 ## Appendix
 * pytorch lightning
 
-# [피어세션 - 팀회고록]()
+# [피어세션 - 팀회고록](https://hackmd.io/@ai17/BJYTbOQ-t)
 
 # 후기
