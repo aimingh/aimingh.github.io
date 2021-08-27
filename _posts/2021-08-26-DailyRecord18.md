@@ -75,6 +75,6 @@ with torch.no_grad():
 ## Appendix
 * pytorch lightning
 
-# [피어세션 - 팀회고록](https://hackmd.io/@ai17/BJYTbOQ-t)
+# [피어세션](https://hackmd.io/@ai17/BJYTbOQ-t)
 
 # 후기

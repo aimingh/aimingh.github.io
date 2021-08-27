@@ -61,6 +61,6 @@ use_math: true
     * 비슷하지 않고 많은데이터 -> CNN Backbone, Classifier update
     * 적은데이터 -> Classifier update
 
-# [피어세션 - 팀회고록](https://hackmd.io/@ai17/BJYTbOQ-t)
+# [피어세션](https://hackmd.io/@ai17/BJYTbOQ-t)
 
 # 후기

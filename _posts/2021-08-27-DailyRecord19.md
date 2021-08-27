@@ -50,6 +50,9 @@ use_math: true
     * paper with codes 등에서 최신 논문과 코드 데이터셋을 확인
     * 자신의 내용을 공유 - 새로운것을 배울 수 있다.
 
-# [피어세션 - 팀회고록]()
+# [피어세션 - 팀회고록](https://hackmd.io/45OwzSbOSNOy0C3vCIfVfA )
 
 # 후기
+1주일이 훌쩍 지나가버린것 같다. 아쉽지만 학습횟수를 많이 사용하지 못한것이 아쉽다. 
+특히 오늘은 random_split으로 나눈 validation set이 전혀 기능하지 않는것에 대해 고민했다.
+최종적으로 같은 사람이 마스크를 쓰고 있는 여러 이미지가 있는것으로 train dataset과 validation dataset이 완전히 독립적으로 분리되지 않은 탓이라 결론지었다. 이부분을 해결하려고 하였는데 baseline code에 이미 관련 내용이 있는 것을 확인하였다. baseline code가 이미 여러가지 고려된 code로 다음주를 대비하여 작업하였던 code를 baseline code와 융합하는 작업을 미리 진행하는 것이 좋아보인다. 

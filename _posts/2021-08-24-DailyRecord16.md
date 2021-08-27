@@ -81,6 +81,6 @@ data_loader = DataLoader(
 
 
 
-# [피어세션 - 팀회고록](https://hackmd.io/qRNCtIf-Rv6qw3PwWZ63eg)
+# [피어세션](https://hackmd.io/qRNCtIf-Rv6qw3PwWZ63eg)
 
 # 후기
