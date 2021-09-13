@@ -1,6 +1,6 @@
 ---
-title: "[boostcamp AI Tech] 학습기록 day27 (week6)"
-date: 2021-09-08 20:00:00 -0400
+title: "[boostcamp AI Tech] 학습기록 day29 (week6)"
+date: 2021-09-10 20:00:00 -0400
 categories:
 use_math: true
 ---
