@@ -7,7 +7,7 @@ use_math: true
 
 # CNN Visualization
 ## CNN visualization?
-* conv net을 시각화 하는 방법들을 말합니다.
+* CNN을 시각화 하는 방법들을 말합니다.
 * 내부의 파라미터 등이 어떻게 동작하는지 직관적으로 이해하기 위해 시각화합니다.
 
 ## Simple visualization
@@ -130,5 +130,30 @@ $$
 # 과제
 
 # 피어세션
+[ 2021년 9월13일  월요일 회의록 ]
 
-# 후기
+✅ 오늘의 피어세션 (모더레이터: 조준희)
+
+1. 강의 요약
+    - 발표자: 임성민
+    - 내용: Object Detection (SSD부터 나머지)
+    - 발표자: 조준희
+    - 내용: CNN Visualization
+
+📢 토의 내용
+
+- 논문리뷰 도전!
+    - 다음주 목,금
+    - 논문:  멘토님 추천받아서 (난이도는 비슷하게 부탁)
+    - 형식: 자유
+    - 곽지윤: U-net
+    - 백종원: YOLOv4
+    - 김현수: R-CNN
+    - 이양재: VGGNet
+    - 임성민: AlexNet
+    - 조준희: Grad-CAM or other segmentation method
+
+📢 내일 각자 해올 것
+
+1. 모더레이터:  곽지윤 캠퍼님
+2. 필수 과제 리뷰, 질문
