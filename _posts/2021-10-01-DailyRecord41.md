@@ -165,8 +165,8 @@ $$
     * 쉬우면 작은 기울기, 어려운 문제에는 큰 기울기
     * Object Detection 외에도 Class imbalance가 심한 Dataset을 사용할떄 focal loss를 사용
 
-## [MMDetection office hour]()
-![mmdetection_logo](https://github.com/aimingh/aimingh.github.io/blob/main/_img/level2_p/mmdet-logo.png){: width="50%" height="50%"}
+## MMDetection office hour
+![mmdetection_logo](/_img/level2_p/mmdet-logo.png){: width="50%" height="50%"}
 
 
 # 과제
