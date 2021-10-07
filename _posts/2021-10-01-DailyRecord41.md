@@ -160,10 +160,13 @@ $$
     * 쉬우면 작은 기울기, 어려운 문제에는 큰 기울기
     * Object Detection 외에도 Class imbalance가 심한 Dataset을 사용할떄 focal loss를 사용
 
+## [MMDetection office hour]()
+
 # 과제
 ## Special Mission 1 - mAP metric code
 ## Special Mission 2 - Faster RCNN3
 ## Special Mission 3 - Baseline
+
 
 # 피어세션
 * https://www.notion.so/20210927-c778a219f55b44c196987e00936a6f5e
