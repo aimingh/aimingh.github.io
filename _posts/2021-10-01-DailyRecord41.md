@@ -161,6 +161,8 @@ $$
     * Object Detection 외에도 Class imbalance가 심한 Dataset을 사용할떄 focal loss를 사용
 
 ## [MMDetection office hour]()
+![mmdetection_logo](https://github.com/aimingh/aimingh.github.io/blob/main/_img/level2_p/mmdet-logo.png){: width="50%" height="50%"}
+
 
 # 과제
 ## Special Mission 1 - mAP metric code
