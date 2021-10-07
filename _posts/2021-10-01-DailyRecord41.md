@@ -166,7 +166,8 @@ $$
     * Object Detection 외에도 Class imbalance가 심한 Dataset을 사용할떄 focal loss를 사용
 
 ## MMDetection office hour
-![mmdetection_logo](/_img/level2_p/mmdet-logo.png){: width="50%" height="50%"}
+<img src="/_img/level2_p/mmdet-logo.png" width="90%" height="90%" title="mmdetection_logo" alt="아무거나"/> 
+![mmdetection_logo](/_img/level2_p/mmdet-logo.png)
 
 
 # 과제
