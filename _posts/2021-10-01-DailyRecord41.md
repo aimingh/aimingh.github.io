@@ -27,6 +27,7 @@ use_math: true
 | 정답 Negative | FP  | TN |
 
 * Precision
+
 $$
 \lim_{x\to 0}{\frac{e^x-1}{2x}}
 \overset{\left[\frac{0}{0}\right]}{\underset{\mathrm{H}}{=}}
@@ -166,7 +167,6 @@ $$
     * Object Detection 외에도 Class imbalance가 심한 Dataset을 사용할떄 focal loss를 사용
 
 ## MMDetection office hour
-<img src="/assets/image/level2_p/mmdet-logo.png" width="90%" height="90%" title="mmdetection_logo"/> 
 ![mmdetection_logo](/assets/image/level2_p/mmdet-logo.png)
 
 
