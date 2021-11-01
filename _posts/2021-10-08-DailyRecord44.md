@@ -338,5 +338,22 @@ pip install -v -e .
 * https://www.notion.so/20211007-2b1255fb3ecb41d8962e35ab95bded75
 * https://www.notion.so/20211008-9a38953c883e46efbf3d0fccd1800998
 
+<!-- # 멘토링
+## object detectoin tip
+1.object detection에 효과적인 augmentation 전략은? (우선실험)
+    object detection에서 multi scale이 중요
+    custom aug를 한다면 박스의 geometry를 확인하는것이 중요
+    object detection의 전용 augmentation은 없다고 봐야한다.
+    TTA가 많이 사용
+
+
+2. 특정 input에 대한 모델을 여러개 사용하여 앙상블
+
+
+3. 수도라벨링
+    classification에서는 prop이 작은애들을 사용해도 좋았던 경험잉 있었으나
+    object detection에서는 높은 prop을 가진 box들을 사용하는것이 좋았다. -->
+    
+
 # 학습회고 
 mmdetection에 대하여 정리하였고 github 블로그에서 계속 문제가 되었던 latex 에러를 해결하였다. 그리고 기본적인 model 외에 swin tranformer같은 backbone도 이용하여 실험하기 시작하였는데 모델에 대한 이해가 부족한 것 같다. mmdetection으로 이미 config 등이 다 구현되어있기 때문에 일부 파라미터만 바꾸면서 실험하는데 mmdetection이 이해한 이후에는 확실히 편하게 사용할 수 있는것 같다.
